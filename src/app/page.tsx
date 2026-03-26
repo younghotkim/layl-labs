@@ -5,6 +5,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import SectionLabel from "@/components/SectionLabel";
 import ArrowIcon from "@/components/ArrowIcon";
 import ActivitySection from "@/components/ActivitySection";
+import ContactLinks from "@/components/ContactLinks";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/blog";
 
@@ -56,13 +57,6 @@ const projects = [
   },
 ];
 
-const contacts = [
-  { label: "hello@example.com", href: "mailto:hello@example.com" },
-  { label: "GitHub", href: "https://github.com" },
-  { label: "LinkedIn", href: "https://linkedin.com" },
-  { label: "X (Twitter)", href: "https://twitter.com" },
-];
-
 export default async function Home() {
   const recentPosts = (await getAllPosts()).slice(0, 3);
 
@@ -103,7 +97,7 @@ export default async function Home() {
                 ["Agent", "Architecture"],
                 ["Full", "Stack Development"],
                 ["Product", "Engineering"],
-                ["Design", "to Execution"],
+                ["E2E", "Thinking & Execution"],
               ].map(([number, label]) => (
                 <div key={label} className="pt-6 border-t border-border">
                   <div className="font-display text-4xl text-text-primary tracking-tight">{number}</div>
@@ -251,22 +245,7 @@ export default async function Home() {
           </ScrollReveal>
 
           <ScrollReveal delay={2}>
-            <div className="flex flex-col">
-              {contacts.map((contact, i) => (
-                <a
-                  key={contact.label}
-                  href={contact.href}
-                  target={contact.href.startsWith("mailto") ? undefined : "_blank"}
-                  rel={contact.href.startsWith("mailto") ? undefined : "noopener"}
-                  className={`flex justify-between items-center py-5 border-b border-border text-text-secondary text-[0.9rem] font-light transition-all duration-300 hover:text-text-primary hover:pl-4 group ${
-                    i === 0 ? "border-t" : ""
-                  }`}
-                >
-                  <span>{contact.label}</span>
-                  <ArrowIcon className="w-4 h-4 stroke-text-tertiary transition-all duration-300 group-hover:stroke-accent group-hover:translate-x-1 group-hover:-translate-y-1" />
-                </a>
-              ))}
-            </div>
+            <ContactLinks />
           </ScrollReveal>
         </div>
       </section>
