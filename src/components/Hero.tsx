@@ -12,7 +12,7 @@ export default function Hero() {
         className="text-xs font-normal tracking-[0.2em] uppercase text-accent mb-6 opacity-0 translate-y-6 relative z-10"
         style={{ animation: "fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.3s forwards" }}
       >
-        Youngha Kim
+        YOUNGHA KIM
       </p>
 
       <div className="relative z-10">
@@ -32,9 +32,9 @@ export default function Hero() {
         className="text-lg text-text-secondary font-light leading-relaxed max-w-lg opacity-0 translate-y-6 relative z-10"
         style={{ animation: "fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.5s forwards" }}
       >
-        에이전트 시스템을 설계하고, 제품으로 완성합니다.
+        새로운 기술을 빠르게 이해하고, 설계하고, 실제 제품으로 이행합니다.
         <br />
-        풀스택 개발자이자 프로덕트 엔지니어 — <strong className="text-text-primary font-medium">Layl</strong>입니다.
+        풀스택 개발자이자 프로덕트 엔지니어, <strong className="text-text-primary font-medium">라일</strong>입니다.
       </p>
 
       <div

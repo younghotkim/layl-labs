@@ -12,20 +12,20 @@ const expertise = [
   {
     index: "01",
     title: "AI Agent\nArchitecture",
-    desc: "LLM 기반 자율 에이전트 시스템을 설계하고, 복잡한 워크플로우를 오케스트레이션하는 아키텍처를 구축합니다.",
-    tags: ["LLM", "RAG", "Multi-Agent", "Tool Use", "Orchestration"],
+    desc: "LLM 기반 에이전트 시스템을 설계하고, 복잡한 워크플로우가 실제로 운영되도록 구조를 만듭니다. 도구 호출, 상태 관리, 멀티 에이전트 협업까지 포함한 실전형 아키텍처를 구축합니다.",
+    tags: ["LLM", "RAG", "LangGraph", "Tool Use", "A2A"],
   },
   {
     index: "02",
     title: "Full-Stack\nDevelopment",
-    desc: "프론트엔드부터 백엔드, 인프라까지 전 영역을 아우르는 개발 역량으로 완결된 제품을 만들어냅니다.",
-    tags: ["React", "Next.js", "Node.js", "Python", "Cloud"],
+    desc: "프론트엔드부터 백엔드, 데이터, 인프라까지 전 영역을 아우르며 서비스가 실제로 동작하고 운영되는 수준까지 구현합니다. 빠른 프로토타이핑부터 안정적인 제품화까지 직접 연결합니다.",
+    tags: ["React", "Next.js", "Node.js", "Python", "Spring", "AWS/Azure"],
   },
   {
     index: "03",
     title: "Product\nEngineering",
-    desc: "기술적 가능성과 사용자 니즈 사이에서 최적의 균형점을 찾아 임팩트 있는 제품을 설계합니다.",
-    tags: ["UX", "Prototyping", "Analytics", "Growth", "Strategy"],
+    desc: "기술적 가능성과 사용자 맥락 사이의 균형을 설계하고, 제품이 실제 성과로 이어지도록 만듭니다. UX를 넘어 AX까지 고려하며, 실험과 전략을 제품 성장으로 연결합니다.",
+    tags: ["UX", "AX", "Prototyping", "Analytics", "Strategy", "Growth"],
   },
 ];
 
@@ -81,18 +81,19 @@ export default async function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-start">
           <ScrollReveal delay={1}>
             <h2 className="font-display text-[clamp(2rem,4vw,3rem)] leading-snug tracking-tight mb-8">
-              기술과 <span className="font-semibold text-accent">제품</span> 사이에서
+              새로운 기술을
               <br />
-              가치를 만듭니다
+              <span className="font-semibold text-accent">실행 가능한 구조</span>로
+              <br />
+              바꿉니다
             </h2>
             <p className="text-text-secondary leading-relaxed text-[0.95rem] font-light">
-              풀스택 개발자로서의 기술적 깊이와 프로덕트 엔지니어로서의 사용자 중심 사고를 결합하여, AI
-              에이전트 시스템을 설계하고 구축합니다.
+              새로운 기술이 등장하면 가능성만 바라보지 않습니다. 빠르게 이해하고, 구조를 설계하고,
+              실제로 작동하는 형태까지 이행합니다.
             </p>
             <p className="text-text-secondary leading-relaxed text-[0.95rem] font-light mt-6">
-              단순한 기술 구현을 넘어, 실제 문제를 해결하는 지능형 소프트웨어 제품을 만드는 것에
-              집중합니다. LLM 기반 에이전트 아키텍처부터 사용자가 만나는 인터페이스까지, 엔드투엔드로
-              사고하고 실행합니다.
+              저는 LLM, 에이전트, 자동화 기술을 제품과 연결하는 사람입니다. 복잡한 기술을 실무에 적용
+              가능한 흐름으로 바꾸고, 설계에서 끝나지 않도록 구현과 운영까지 밀어붙입니다.
             </p>
           </ScrollReveal>
 
@@ -102,7 +103,7 @@ export default async function Home() {
                 ["Agent", "Architecture"],
                 ["Full", "Stack Development"],
                 ["Product", "Engineering"],
-                ["E2E", "Thinking & Execution"],
+                ["Design", "to Execution"],
               ].map(([number, label]) => (
                 <div key={label} className="pt-6 border-t border-border">
                   <div className="font-display text-4xl text-text-primary tracking-tight">{number}</div>
