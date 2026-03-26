@@ -16,11 +16,11 @@ export default function Hero() {
       </p>
 
       <div className="relative z-10">
-        <h1 className="font-display text-[clamp(3.5rem,8vw,7rem)] leading-[1.15] tracking-tight text-text-primary mb-8">
-          <span className="block overflow-visible hero-line pb-1">
+        <h1 className="font-display text-[clamp(3.5rem,8vw,7rem)] leading-[1.2] tracking-tight text-text-primary mb-8">
+          <span className="block overflow-visible hero-line pt-1 pb-1">
             <span>I Build with</span>
           </span>
-          <span className="block overflow-visible hero-line pb-1">
+          <span className="block overflow-visible hero-line pt-1 pb-1">
             <span>
               <span className="font-semibold text-accent">AI Agents</span>
             </span>
