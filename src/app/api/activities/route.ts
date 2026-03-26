@@ -8,7 +8,7 @@ function verifyApiKey(req: NextRequest) {
 
 // GET /api/activities — 공개: 최근 활동 조회
 export async function GET(req: NextRequest) {
-  const limit = parseInt(req.nextUrl.searchParams.get("limit") ?? "20");
+  const limit = parseInt(req.nextUrl.searchParams.get("limit") ?? "4");
 
   const { data, error } = await getSupabaseAdmin()
     .from("activities")

@@ -2,6 +2,8 @@
 
 import { useEffect, useState, useCallback } from "react";
 
+const ACTIVITY_LIMIT = 4;
+
 interface Activity {
   id: string;
   type: string;
@@ -44,7 +46,7 @@ export default function ActivityFeed({ onNewEvents }: Props) {
 
   const fetchActivities = useCallback(async () => {
     try {
-      const res = await fetch("/api/activities?limit=15");
+      const res = await fetch(`/api/activities?limit=${ACTIVITY_LIMIT}`);
       if (res.ok) {
         const data = await res.json();
         setActivities((prev) => {
