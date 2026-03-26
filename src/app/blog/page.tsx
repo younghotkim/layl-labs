@@ -3,7 +3,6 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
-import SectionLabel from "@/components/SectionLabel";
 import { getAllPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {

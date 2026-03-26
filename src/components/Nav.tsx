@@ -6,18 +6,15 @@ import { usePathname } from "next/navigation";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpenAtPath, setMenuOpenAtPath] = useState<string | null>(null);
   const pathname = usePathname();
+  const menuOpen = menuOpenAtPath === pathname;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
 
   const links = [
     { href: "/#about", label: "About" },
@@ -42,7 +39,7 @@ export default function Nav() {
       {/* Mobile toggle */}
       <button
         className="flex flex-col gap-[5px] md:hidden p-1"
-        onClick={() => setMenuOpen(!menuOpen)}
+        onClick={() => setMenuOpenAtPath(menuOpen ? null : pathname)}
         aria-label="Toggle navigation"
       >
         <span className="block w-5 h-px bg-text-primary" />
@@ -59,6 +56,7 @@ export default function Nav() {
           <li key={link.href}>
             <Link
               href={link.href}
+              onClick={() => setMenuOpenAtPath(null)}
               className="text-text-secondary text-xs font-normal uppercase tracking-widest hover:text-text-primary transition-colors duration-300 relative group"
             >
               {link.label}

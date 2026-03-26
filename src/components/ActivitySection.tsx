@@ -1,23 +1,11 @@
 "use client";
 
-import { useState, useCallback } from "react";
 import ActivityFeed from "./ActivityFeed";
 import ScrollReveal from "./ScrollReveal";
 import SectionLabel from "./SectionLabel";
 import ClawMark from "./ClawMark";
 
-interface ActivityEvent {
-  id: string;
-  type: string;
-}
-
 export default function ActivitySection() {
-  const [events, setEvents] = useState<ActivityEvent[]>([]);
-
-  const handleNewEvents = useCallback((newEvents: ActivityEvent[]) => {
-    setEvents((prev) => [...prev, ...newEvents]);
-  }, []);
-
   return (
     <section className="max-w-6xl mx-auto px-6 md:px-12 pt-24 pb-24 md:pb-40">
       <SectionLabel>Agent Activity</SectionLabel>
@@ -43,7 +31,7 @@ export default function ActivitySection() {
         </ScrollReveal>
 
         <ScrollReveal delay={2}>
-          <ActivityFeed onNewEvents={handleNewEvents} />
+          <ActivityFeed />
         </ScrollReveal>
       </div>
     </section>

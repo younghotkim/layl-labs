@@ -12,7 +12,6 @@ interface NeuralBackgroundProps {
 }
 
 const NODE_COUNT = 80;
-const EDGE_MAX = 200;
 const SPREAD_X = 18;
 const SPREAD_Y = 11;
 const SPREAD_Z = 6;

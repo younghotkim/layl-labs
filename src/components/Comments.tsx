@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 interface Comment {
   id: string;
@@ -24,7 +24,7 @@ export default function Comments({ postSlug }: { postSlug: string }) {
   const [deleteId, setDeleteId] = useState<string | null>(null);
   const [deletePassword, setDeletePassword] = useState("");
 
-  async function fetchComments() {
+  const fetchComments = useCallback(async () => {
     try {
       const res = await fetch(`/api/comments?post=${postSlug}`);
       if (res.ok) {
@@ -33,11 +33,11 @@ export default function Comments({ postSlug }: { postSlug: string }) {
     } finally {
       setLoading(false);
     }
-  }
+  }, [postSlug]);
 
   useEffect(() => {
     fetchComments();
-  }, [postSlug]);
+  }, [fetchComments]);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -63,7 +63,7 @@ export default function Comments({ postSlug }: { postSlug: string }) {
       }
 
       setContent("");
-      fetchComments();
+      await fetchComments();
     } finally {
       setSubmitting(false);
     }
@@ -84,7 +84,7 @@ export default function Comments({ postSlug }: { postSlug: string }) {
 
     setDeleteId(null);
     setDeletePassword("");
-    fetchComments();
+    await fetchComments();
   }
 
   function formatDate(iso: string) {

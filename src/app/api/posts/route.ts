@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import { getSupabaseAdmin } from "@/lib/supabase";
 
 function unauthorized() {
@@ -8,6 +9,13 @@ function unauthorized() {
 function verifyApiKey(req: NextRequest) {
   const key = req.headers.get("x-api-key");
   return key === process.env.BLOG_API_KEY;
+}
+
+function revalidatePostPaths(slug: string) {
+  revalidatePath("/");
+  revalidatePath("/blog");
+  revalidatePath(`/blog/${slug}`);
+  revalidatePath("/blog/[slug]", "page");
 }
 
 // GET /api/posts — 공개: 발행된 글 목록
@@ -52,6 +60,8 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 
+  revalidatePostPaths(data.slug);
+
   return NextResponse.json(data, { status: 201 });
 }
 
@@ -77,6 +87,11 @@ export async function PUT(req: NextRequest) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 
+  revalidatePostPaths(slug);
+  if (data.slug !== slug) {
+    revalidatePostPaths(data.slug);
+  }
+
   return NextResponse.json(data);
 }
 
@@ -95,6 +110,8 @@ export async function DELETE(req: NextRequest) {
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
+
+  revalidatePostPaths(slug);
 
   return NextResponse.json({ success: true });
 }
