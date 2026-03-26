@@ -21,6 +21,7 @@ export default function Nav() {
     { href: "/#expertise", label: "What I Do" },
     { href: "/#projects", label: "Works" },
     { href: "/blog", label: "Blog" },
+    { href: "/news", label: "News" },
     { href: "/#contact", label: "Contact" },
   ];
 

@@ -5,9 +5,11 @@ import ScrollReveal from "@/components/ScrollReveal";
 import SectionLabel from "@/components/SectionLabel";
 import ArrowIcon from "@/components/ArrowIcon";
 import ActivitySection from "@/components/ActivitySection";
+import NewsTicker from "@/components/NewsTicker";
 import ContactLinks from "@/components/ContactLinks";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/blog";
+import { getRecentClips } from "@/lib/clips";
 
 const expertise = [
   {
@@ -52,7 +54,10 @@ const projects = [
 ];
 
 export default async function Home() {
-  const recentPosts = (await getAllPosts()).slice(0, 3);
+  const [recentPosts, recentClips] = await Promise.all([
+    getAllPosts().then((posts) => posts.slice(0, 3)),
+    getRecentClips(5),
+  ]);
 
   return (
     <>
@@ -173,6 +178,9 @@ export default async function Home() {
       <ActivitySection />
 
       <div className="max-w-6xl mx-auto px-6 md:px-12 h-px bg-border" />
+
+      {/* ── News Ticker ── */}
+      {recentClips.length > 0 && <NewsTicker clips={recentClips} />}
 
       {/* ── Blog Preview ── */}
       {recentPosts.length > 0 && (
