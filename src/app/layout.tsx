@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className={`${sora.variable} antialiased`}>
+    <html lang="ko" suppressHydrationWarning className={`${sora.variable} antialiased`}>
       <head>
         <link
           rel="preconnect"
@@ -33,7 +33,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen bg-bg font-sans">{children}</body>
+      <body suppressHydrationWarning className="min-h-screen bg-bg font-sans">{children}</body>
     </html>
   );
 }

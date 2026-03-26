@@ -12,48 +12,42 @@ import { getAllPosts } from "@/lib/blog";
 const expertise = [
   {
     index: "01",
-    title: "AI Agent\nArchitecture",
-    desc: "LLM 기반 에이전트 시스템을 설계하고, 복잡한 워크플로우가 실제로 운영되도록 구조를 만듭니다. 도구 호출, 상태 관리, 멀티 에이전트 협업까지 포함한 실전형 아키텍처를 구축합니다.",
-    tags: ["LLM", "RAG", "LangGraph", "Tool Use", "A2A"],
+    title: "AI Agent\nExploration",
+    desc: "AI 에이전트로 뭘 할 수 있을까? 직접 만들어보고, 실험하고, 그 과정을 공유합니다. 이 사이트를 운영하는 OpenClaw도 그렇게 탄생했습니다.",
+    tags: ["LLM", "RAG", "LangGraph", "Tool Use", "OpenClaw"],
   },
   {
     index: "02",
-    title: "Full-Stack\nDevelopment",
-    desc: "프론트엔드부터 백엔드, 데이터, 인프라까지 전 영역을 아우르며 서비스가 실제로 동작하고 운영되는 수준까지 구현합니다. 빠른 프로토타이핑부터 안정적인 제품화까지 직접 연결합니다.",
-    tags: ["React", "Next.js", "Node.js", "Python", "Spring", "AWS/Azure"],
+    title: "Building\nin Public",
+    desc: "만드는 과정 자체를 콘텐츠로 공유합니다. 어떤 기술을 선택했고, 어디서 막혔고, 어떻게 해결했는지 — 완성된 결과물보다 과정이 더 재밌으니까요.",
+    tags: ["React", "Next.js", "Python", "Supabase", "Open Source"],
   },
   {
     index: "03",
-    title: "Product\nEngineering",
-    desc: "기술적 가능성과 사용자 맥락 사이의 균형을 설계하고, 제품이 실제 성과로 이어지도록 만듭니다. UX를 넘어 AX까지 고려하며, 실험과 전략을 제품 성장으로 연결합니다.",
-    tags: ["UX", "AX", "Prototyping", "Analytics", "Strategy", "Growth"],
+    title: "Tech\nCuration",
+    desc: "쏟아지는 AI·개발 트렌드 중에서 실제로 쓸만한 것들을 골라 정리합니다. OpenClaw가 리서치하고, 제가 검증하고, 블로그에서 공유합니다.",
+    tags: ["AI Trends", "Agent News", "Dev Tools", "Newsletter"],
   },
 ];
 
 const projects = [
   {
-    type: "AI Agent Platform",
-    title: "Autonomous Agent Framework",
-    desc: "복잡한 비즈니스 워크플로우를 자동화하는 멀티 에이전트 오케스트레이션 프레임워크",
-    stack: ["Python", "LangGraph", "FastAPI", "Redis"],
+    type: "Live Project",
+    title: "Layl Labs",
+    desc: "라일과 AI 에이전트 OpenClaw가 함께 운영하는 사이트. 블로그 발행, 뉴스 큐레이션까지 에이전트와 공동으로 만들어가고 있습니다.",
+    stack: ["Next.js", "TypeScript", "Supabase", "OpenClaw"],
   },
   {
-    type: "Developer Tool",
-    title: "AI-Powered Code Assistant",
-    desc: "코드베이스를 이해하고 컨텍스트 기반 코드 리뷰와 리팩토링을 제안하는 개발자 도구",
-    stack: ["TypeScript", "React", "RAG", "Vector DB"],
+    type: "AI Agent",
+    title: "OpenClaw",
+    desc: "리서치, 글 작성, 뉴스 큐레이션을 자동으로 수행하는 AI 에이전트. 어떻게 만들었는지, 어떻게 동작하는지 모두 공개합니다.",
+    stack: ["Python", "LangGraph", "LLM", "Automation"],
   },
   {
-    type: "SaaS Product",
-    title: "Intelligent Workflow Engine",
-    desc: "AI 에이전트가 사용자의 반복 작업을 학습하고 자동화하는 워크플로우 엔진",
-    stack: ["Next.js", "Python", "PostgreSQL", "LLM"],
-  },
-  {
-    type: "Data Platform",
-    title: "Real-time Analytics Dashboard",
-    desc: "에이전트 시스템의 성능과 행동을 실시간으로 모니터링하고 분석하는 대시보드",
-    stack: ["React", "D3.js", "WebSocket", "ClickHouse"],
+    type: "Coming Soon",
+    title: "OpenClaw Starter Kit",
+    desc: "나만의 AI 에이전트를 만들어보고 싶은 분들을 위한 오픈소스 템플릿. 함께 만들어가는 프로젝트입니다.",
+    stack: ["Template", "Open Source", "Community"],
   },
 ];
 
@@ -75,33 +69,31 @@ export default async function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-start">
           <ScrollReveal delay={1}>
             <h2 className="font-display text-[clamp(2rem,4vw,3rem)] leading-snug tracking-tight mb-8">
-              새로운 기술을
+              에이전트와 함께
               <br />
-              <span className="font-semibold text-accent">실행 가능한 구조</span>로
-              <br />
-              바꿉니다
+              <span className="font-semibold text-accent">만들고 운영</span>합니다
             </h2>
             <p className="text-text-secondary leading-relaxed text-[0.95rem] font-light">
-              새로운 기술이 등장하면 가능성만 바라보지 않습니다. 빠르게 이해하고, 구조를 설계하고,
-              실제로 작동하는 형태까지 이행합니다.
+              새로운 기술이 나오면 일단 만들어봅니다.
+              되는지 안 되는지는 직접 해봐야 알 수 있으니까요.
             </p>
             <p className="text-text-secondary leading-relaxed text-[0.95rem] font-light mt-6">
-              저는 LLM, 에이전트, 자동화 기술을 제품과 연결하는 사람입니다. 복잡한 기술을 실무에 적용
-              가능한 흐름으로 바꾸고, 설계에서 끝나지 않도록 구현과 운영까지 밀어붙입니다.
+              그 과정에서 배운 것들을 여기에 기록하고 공유합니다.
+              이 사이트도 AI 에이전트 OpenClaw와 함께 운영하고 있습니다.
             </p>
           </ScrollReveal>
 
           <ScrollReveal delay={2}>
             <div className="grid grid-cols-2 gap-8 pt-4">
               {[
-                ["Agent", "Architecture"],
-                ["Full", "Stack Development"],
-                ["Product", "Engineering"],
-                ["E2E", "Thinking & Execution"],
-              ].map(([number, label]) => (
-                <div key={label} className="pt-6 border-t border-border">
-                  <div className="font-display text-4xl text-text-primary tracking-tight">{number}</div>
-                  <div className="text-[0.75rem] text-text-tertiary uppercase tracking-widest mt-2">
+                ["Build", "에이전트 & 웹 서비스"],
+                ["Ship", "프로토타입에서 제품까지"],
+                ["Automate", "반복 작업의 자동화"],
+                ["Share", "과정과 결과를 공개"],
+              ].map(([keyword, label]) => (
+                <div key={keyword} className="pt-6 border-t border-border">
+                  <div className="font-display text-4xl text-text-primary tracking-tight">{keyword}</div>
+                  <div className="text-[0.75rem] text-text-tertiary tracking-widest mt-2">
                     {label}
                   </div>
                 </div>
@@ -115,7 +107,7 @@ export default async function Home() {
 
       {/* ── Expertise ── */}
       <section id="expertise" className="max-w-6xl mx-auto px-6 md:px-12 pt-24 pb-24 md:pb-40">
-        <SectionLabel>Expertise</SectionLabel>
+        <SectionLabel>What I Do</SectionLabel>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border border border-border">
           {expertise.map((item, i) => (
             <ScrollReveal key={item.index} delay={i + 1}>
@@ -146,18 +138,14 @@ export default async function Home() {
 
       {/* ── Projects ── */}
       <section id="projects" className="max-w-6xl mx-auto px-6 md:px-12 pt-24 pb-24 md:pb-40">
-        <SectionLabel>Selected Work</SectionLabel>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <SectionLabel>Works</SectionLabel>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {projects.map((project, i) => (
             <ScrollReveal key={project.title} delay={i + 1}>
-              <a
-                href="#"
-                className="block bg-bg-card border border-border p-10 relative overflow-hidden transition-all duration-400 hover:border-border-hover hover:-translate-y-1 group"
+              <div
+                className="block bg-bg-card border border-border p-10 relative overflow-hidden transition-all duration-400 hover:border-border-hover hover:-translate-y-1 group h-full"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-accent-dim to-transparent opacity-0 transition-opacity duration-400 group-hover:opacity-100" />
-                <div className="absolute top-10 right-10 w-6 h-6 opacity-0 -translate-x-2 translate-y-2 transition-all duration-400 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0">
-                  <ArrowIcon className="w-full h-full stroke-accent" />
-                </div>
                 <div className="relative z-10">
                   <div className="text-[0.65rem] tracking-[0.15em] uppercase text-accent mb-6 font-medium">
                     {project.type}
@@ -173,7 +161,7 @@ export default async function Home() {
                     ))}
                   </div>
                 </div>
-              </a>
+              </div>
             </ScrollReveal>
           ))}
         </div>
@@ -238,10 +226,13 @@ export default async function Home() {
             <h2 className="font-display text-[clamp(2.5rem,5vw,4rem)] leading-tight tracking-tight">
               함께 만들어갈
               <br />
-              <span className="font-semibold text-accent">다음 프로젝트</span>가
+              <span className="font-semibold text-accent">에이전트</span>가
               <br />
               있으신가요?
             </h2>
+            <p className="text-text-secondary text-sm font-light leading-relaxed mt-6">
+              신기술 탐험, 에이전트 실험, 사이드 프로젝트 — 같이 만들고 싶은 게 있다면 편하게 연락주세요.
+            </p>
           </ScrollReveal>
 
           <ScrollReveal delay={2}>

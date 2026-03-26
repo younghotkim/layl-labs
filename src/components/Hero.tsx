@@ -12,17 +12,17 @@ export default function Hero() {
         className="text-xs font-normal tracking-[0.2em] uppercase text-accent mb-6 opacity-0 translate-y-6 relative z-10"
         style={{ animation: "fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.3s forwards" }}
       >
-        YOUNGHA KIM
+        LAYL — YOUNGHA KIM
       </p>
 
       <div className="relative z-10">
         <h1 className="font-display text-[clamp(3.5rem,8vw,7rem)] leading-[1.15] tracking-tight text-text-primary mb-8">
           <span className="block overflow-visible hero-line pb-1">
-            <span>AI Agent</span>
+            <span>I Build with</span>
           </span>
           <span className="block overflow-visible hero-line pb-1">
             <span>
-              <span className="font-semibold text-accent">Architect</span>
+              <span className="font-semibold text-accent">AI Agents</span>
             </span>
           </span>
         </h1>
@@ -32,9 +32,9 @@ export default function Hero() {
         className="text-lg text-text-secondary font-light leading-relaxed max-w-lg opacity-0 translate-y-6 relative z-10"
         style={{ animation: "fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.5s forwards" }}
       >
-        새로운 기술을 빠르게 이해하고, 설계하고, 실제 제품으로 이행합니다.
+        만들고, 실험하고, 과정을 공유하는 <strong className="text-text-primary font-medium">라일</strong>입니다.
         <br />
-        풀스택 개발자이자 프로덕트 엔지니어, <strong className="text-text-primary font-medium">라일</strong>입니다.
+        이 사이트도 AI 에이전트 <strong className="text-text-primary font-medium">OpenClaw</strong>와 함께 만들어가고 있습니다.
       </p>
 
       <div
